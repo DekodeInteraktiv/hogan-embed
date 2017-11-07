@@ -1,0 +1,15 @@
+.hogan-module-embed iframe, .hogan-module-embed figcaption {
+	max-width: 100%;
+}
+
+.hogan-module-embed iframe, .hogan-module-embed blockquote, .hogan-module-embed .twitter-tweet {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hogan-module-embed figcaption {
+	width: 815px;
+	max-width: 95%;
+	margin: auto;
+}
