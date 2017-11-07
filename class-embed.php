@@ -50,7 +50,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 		/**
 		 * Field definitions for module.
 		 */
-		public function get_layout_definition() {
+		public function get_fields() {
 
 			$fields = [
 				[
@@ -75,22 +75,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 				];
 			}
 
-			// Include local and global field before and after default fields.
-			$fields = array_merge(
-				apply_filters( 'hogan/module/fields/pre', [] ),
-				apply_filters( 'hogan/module/embed/fields/pre', [] ),
-				$fields,
-				apply_filters( 'hogan/module/embed/fields/post', [] ),
-				apply_filters( 'hogan/module/fields/post', [] )
-			);
-
-			return [
-				'key' => $this->field_key,
-				'name' => $this->name,
-				'label' => $this->label,
-				'display' => 'block',
-				'sub_fields' => $fields,
-			];
+			return $fields;
 		}
 
 		/**
