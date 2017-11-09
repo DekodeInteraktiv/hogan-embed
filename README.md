@@ -5,9 +5,16 @@ Install the module using Composer `composer require dekodeinteraktiv/hogan-embed
 
 ## Available filters
 - `hogan/module/embed/template` for overriding the default template file.
-- `hogan/module/embed/wrapper_classes` for HTML wrapper CSS classes.
+- `hogan/module/embed/wrapper_tag` for outer HTML wrapper tag, default `<section>`
+- `hogan/module/embed/wrapper_classes` for outer HTML wrapper CSS classes.
+- `hogan/module/embed/inner_wrapper_classes` for inner HTML `<figure>` wrapper classes.
 - `hogan/module/embed/content/allowed_html` for allowed oEmbed HTML.
+
+### Heading field
+- `hogan/module/embed/heading/enabled` for enabling heading field, default `true`.
+
+### Caption field
+- `hogan/module/embed/caption/enabled` for enabling caption field, default `true`.
 - `hogan/module/embed/caption/tabs` for TinyMCE editor tabs, default all.
 - `hogan/module/embed/caption/allow_media_upload` for allowing TinyMCE editor media upload, default 0.
 - `hogan/module/embed/caption/toolbar` for TinyMCE editor toolbar, default hogan.
-- `hogan/module/embed/include_caption` include caption field, default true.
