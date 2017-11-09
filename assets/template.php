@@ -32,12 +32,10 @@ $embed_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', 
 
 ?>
 
-<section class="<?php echo esc_attr( $this->get_wrapper_classes( true ) ); ?>">
-	<figure>
-		<?php echo wp_kses( $this->content, $embed_allowed_html ); ?>
+<figure>
+	<?php echo wp_kses( $this->content, $embed_allowed_html ); ?>
 
-		<?php if ( ! empty( $this->caption ) ) : ?>
-			<figcaption><?php echo wp_kses_post( $this->caption ); ?></figcaption>
-		<?php endif; ?>
-	</figure>
-</section>
+	<?php if ( ! empty( $this->caption ) ) : ?>
+		<figcaption><?php echo wp_kses_post( $this->caption ); ?></figcaption>
+	<?php endif; ?>
+</figure>
