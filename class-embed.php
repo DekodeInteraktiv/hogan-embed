@@ -21,6 +21,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 	class Embed extends Module {
 
 		/**
+		 * Embed heading
+		 *
+		 * @var string $heading
+		 */
+		public $heading;
+
+		/**
 		 * Embed content
 		 *
 		 * @var string $content
@@ -52,17 +59,30 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 		 */
 		public function get_fields() {
 
-			$fields = [
-				[
-					'type' => 'oembed',
-					'key' => $this->field_key . '_content',
-					'name' => 'content',
-					'width' => 815,
-					'height' => 458,
-				],
+			$fields = [];
+
+			if ( true === apply_filters( 'hogan/module/embed/heading/enabled', true ) ) {
+
+				$fields[] = [
+					'type' => 'text',
+					'key' => $this->field_key . '_heading',
+					'name' => 'heading',
+					'label' => __( 'Heading', 'hogan-embed' ),
+					'instructions' => __( 'Optional heading will show only if filled in.', 'hogan-embed' ),
+				];
+
+			}
+
+			$fields[] = [
+				'type' => 'oembed',
+				'key' => $this->field_key . '_content',
+				'name' => 'content',
+				'width' => 815,
+				'height' => 458,
 			];
 
-			if ( true === apply_filters( 'hogan/module/embed/include_caption', true ) ) {
+			if ( true === apply_filters( 'hogan/module/embed/caption/enabled', true ) ) {
+
 				$fields[] = [
 					'type' => 'wysiwyg',
 					'key' => $this->field_key . '_caption',
@@ -73,6 +93,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 					'media_upload' => apply_filters( 'hogan/module/embed/caption/allow_media_upload', 0 ),
 					'toolbar' => apply_filters( 'hogan/module/embed/caption/toolbar', 'hogan' ),
 				];
+
 			}
 
 			return $fields;
@@ -96,6 +117,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 		 */
 		public function load_args_from_layout_content( $content ) {
 
+			$this->heading = $content['heading'] ?? null;
 			$this->content = $content['content'];
 			$this->caption = $content['caption'] ?? null;
 

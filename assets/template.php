@@ -30,12 +30,22 @@ $embed_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', 
 	],
 ] );
 
+// CSS classes for inner wrapper <figure>.
+$classes = apply_filters( 'hogan/module/embed/inner_wrapper_classes', [], $this );
+$classes = trim( implode( ' ', array_filter( $classes ) ) );
+
 ?>
 
-<figure>
+<figure class="<?php echo esc_attr( $classes ); ?>">
+
+	<?php if ( ! empty( $this->heading ) ) : ?>
+		<h1 class="heading"><?php echo esc_html( $this->heading ); ?></h1>
+	<?php endif; ?>
+
 	<?php echo wp_kses( $this->content, $embed_allowed_html ); ?>
 
 	<?php if ( ! empty( $this->caption ) ) : ?>
 		<figcaption><?php echo wp_kses_post( $this->caption ); ?></figcaption>
 	<?php endif; ?>
+
 </figure>
