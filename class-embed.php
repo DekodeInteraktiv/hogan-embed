@@ -122,6 +122,17 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 			$this->caption = $content['caption'] ?? null;
 
 			parent::load_args_from_layout_content( $content );
+
+			add_filter( 'hogan/module/embed/inner_wrapper_tag', function() {
+				return 'figure';
+			} );
+		}
+
+		/**
+		 * Validate module content before template is loaded.
+		 */
+		public function validate_args() {
+			return ! empty( $this->content );
 		}
 	}
 }
