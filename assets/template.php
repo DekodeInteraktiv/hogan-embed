@@ -33,7 +33,7 @@ $embed_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', 
 ?>
 
 <?php if ( ! empty( $this->heading ) ) : ?>
-	<h1 class="heading"><?php echo esc_html( $this->heading ); ?></h1>
+	<h2 class="heading"><?php echo esc_html( $this->heading ); ?></h2>
 <?php endif; ?>
 
 <?php echo wp_kses( $this->content, $embed_allowed_html ); ?>
