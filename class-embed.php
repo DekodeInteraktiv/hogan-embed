@@ -35,6 +35,13 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 		public $content;
 
 		/**
+		 * Allowed HTML for embed content
+		 *
+		 * @var string $content_allowed_html
+		 */
+		public $content_allowed_html;
+
+		/**
 		 * WYSIWYG caption
 		 *
 		 * @var string $caption ;
@@ -62,7 +69,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 
 			$fields = [];
 
-			if ( true === apply_filters( 'hogan/module/embed/field/heading/enabled', true ) ) {
+			if ( true === apply_filters( 'hogan/module/embed/heading/enabled', true ) ) {
 
 				$fields[] = [
 					'type'         => 'text',
@@ -82,7 +89,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 				'height' => 458,
 			];
 
-			if ( true === apply_filters( 'hogan/module/embed/field/caption/enabled', true ) ) {
+			if ( true === apply_filters( 'hogan/module/embed/caption/enabled', true ) ) {
 
 				$fields[] = [
 					'type'         => 'wysiwyg',
@@ -90,9 +97,9 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 					'name'         => 'caption',
 					'label'        => __( 'Caption below the embedded object.', 'hogan-embed' ),
 					'delay'        => true,
-					'tabs'         => apply_filters( 'hogan/module/embed/field/caption/tabs', 'all' ),
-					'media_upload' => apply_filters( 'hogan/module/embed/field/caption/allow_media_upload', 0 ),
-					'toolbar'      => apply_filters( 'hogan/module/embed/field/caption/toolbar', 'hogan' ),
+					'tabs'         => apply_filters( 'hogan/module/embed/caption/tabs', 'all' ),
+					'media_upload' => apply_filters( 'hogan/module/embed/caption/allow_media_upload', 0 ),
+					'toolbar'      => apply_filters( 'hogan/module/embed/caption/toolbar', 'hogan' ),
 				];
 
 			}
@@ -150,6 +157,27 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 			$this->heading = $content['heading'] ?? null;
 			$this->content = $content['content'];
 			$this->caption = $content['caption'] ?? null;
+
+			$this->content_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
+				'a' => [
+					'href' => true,
+				],
+				'blockquote' => [],
+				'div' => [
+					'class' => true,
+					'style' => true,
+				],
+				'iframe' => [
+					'src' => true,
+					'width' => true,
+					'height' => true,
+					'frameborder' => true,
+					'marginwidth' => true,
+					'marginheight' => true,
+					'scrolling' => true,
+					'title' => true,
+				],
+			] );
 
 			parent::load_args_from_layout_content( $content );
 

@@ -8,10 +8,12 @@ Install the module using Composer `composer require dekodeinteraktiv/hogan-embed
 - `hogan/module/embed/wrapper_tag` for outer HTML wrapper tag, default `<section>`
 - `hogan/module/embed/wrapper_classes` for outer HTML wrapper CSS classes.
 - `hogan/module/embed/inner_wrapper_classes` for inner HTML `<figure>` wrapper classes.
-- `hogan/module/embed/content/allowed_html` for allowed oEmbed HTML.
 
 ### Heading field
 - `hogan/module/embed/heading/enabled` for enabling heading field, default `true`.
+
+### Content field
+- `hogan/module/embed/content/allowed_html` for allowed oEmbed HTML.
 
 ### Caption field
 - `hogan/module/embed/caption/enabled` for enabling caption field, default `true`.

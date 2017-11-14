@@ -13,34 +13,13 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Embed ) ) {
 	return; // Exit if accessed directly.
 }
 
-$embed_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
-	'a' => [
-		'href' => true,
-	],
-	'blockquote' => [],
-	'div' => [
-		'class' => true,
-		'style' => true,
-	],
-	'iframe' => [
-		'src' => true,
-		'width' => true,
-		'height' => true,
-		'frameborder' => true,
-		'marginwidth' => true,
-		'marginheight' => true,
-		'scrolling' => true,
-		'title' => true,
-	],
-] );
-
 ?>
 
 <?php if ( ! empty( $this->heading ) ) : ?>
 	<h2 class="heading"><?php echo esc_html( $this->heading ); ?></h2>
 <?php endif; ?>
 
-<?php echo wp_kses( $this->content, $embed_allowed_html ); ?>
+<?php echo wp_kses( $this->content, $this->content_allowed_html ); ?>
 
 <?php if ( ! empty( $this->caption ) ) : ?>
 	<figcaption><?php echo wp_kses_post( $this->caption ); ?></figcaption>
