@@ -18,6 +18,10 @@ $embed_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', 
 		'href' => true,
 	],
 	'blockquote' => [],
+	'div' => [
+		'class' => true,
+		'style' => true,
+	],
 	'iframe' => [
 		'src' => true,
 		'width' => true,

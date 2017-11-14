@@ -13,3 +13,23 @@
 	max-width: 95%;
 	margin: auto;
 }
+
+/* Start Responsive classes */
+
+.hogan-module-embed .embed-responsive {
+	position: relative;
+	display: block;
+	height: 0;
+	padding-top: 0;
+	overflow: hidden;
+}
+
+.hogan-module-embed .embed-responsive iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* End Responsive classes */
