@@ -88,9 +88,12 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 					'name'         => 'caption',
 					'label'        => __( 'Caption below the embedded object.', 'hogan-embed' ),
 					'delay'        => true,
-					'tabs'         => apply_filters( 'hogan/module/embed/caption/tabs', 'all' ),
+					'tabs'         => apply_filters( 'hogan/module/embed/caption/tabs', 'visual' ),
 					'media_upload' => apply_filters( 'hogan/module/embed/caption/allow_media_upload', 0 ),
-					'toolbar'      => apply_filters( 'hogan/module/embed/caption/toolbar', 'hogan' ),
+					'toolbar'      => apply_filters( 'hogan/module/embed/caption/toolbar', 'hogan_caption' ),
+					'wrapper'      => [
+						'class' => apply_filters( 'hogan/module/embed/caption/wrapper_class', 'small-height-editor' ),
+					],
 				];
 
 			}
