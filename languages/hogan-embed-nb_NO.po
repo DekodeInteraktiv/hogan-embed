@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hogan Module: Embed\n"
-"POT-Creation-Date: 2017-11-09 20:13+0100\n"
-"PO-Revision-Date: 2017-11-09 20:13+0100\n"
+"POT-Creation-Date: 2017-11-14 11:04+0100\n"
+"PO-Revision-Date: 2017-11-14 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -20,19 +20,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: class-embed.php:49
+#: class-embed.php:56
 msgid "Embed"
 msgstr "Embed"
 
-#: class-embed.php:70
-msgid "Heading"
-msgstr "Overskrift"
-
-#: class-embed.php:71
-msgid "Optional heading will show only if filled in."
-msgstr "Valgfri overskrift vises kun hvis fylt inn."
-
-#: class-embed.php:90
+#: class-embed.php:89
 msgid "Caption below the embedded object."
 msgstr "Bildetekst under objektet."
 
@@ -55,3 +47,9 @@ msgstr "Dekode"
 #. Author URI of the plugin/theme
 msgid "https://dekode.no"
 msgstr "https://dekode.no"
+
+#~ msgid "Heading"
+#~ msgstr "Overskrift"
+
+#~ msgid "Optional heading will show only if filled in."
+#~ msgstr "Valgfri overskrift vises kun hvis fylt inn."

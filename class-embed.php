@@ -69,17 +69,8 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 
 			$fields = [];
 
-			if ( true === apply_filters( 'hogan/module/embed/heading/enabled', true ) ) {
-
-				$fields[] = [
-					'type'         => 'text',
-					'key'          => $this->field_key . '_heading',
-					'name'         => 'heading',
-					'label'        => __( 'Heading', 'hogan-embed' ),
-					'instructions' => __( 'Optional heading will show only if filled in.', 'hogan-embed' ),
-				];
-
-			}
+			// Heading field can be disabled using filter hogan/module/embed/heading/enabled (true/false).
+			hogan_append_heading_field( $fields, $this );
 
 			$fields[] = [
 				'type'   => 'oembed',
