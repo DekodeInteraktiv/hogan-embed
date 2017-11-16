@@ -139,6 +139,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 			$this->content_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
 				'a' => [
 					'href' => true,
+					'target' => true,
 				],
 				'blockquote' => [],
 				'div' => [
