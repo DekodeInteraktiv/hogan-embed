@@ -106,7 +106,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
 		public function manipulate_oembed_html( $html, $data ) {
 
 			// Verify oembed data (as done in the oEmbed data2html code).
-			if ( ! is_object( $data ) || empty( $data->type ) ) {
+			if ( ! is_object( $data ) || empty( $data->type ) || ! in_the_loop() ) {
 				return $html;
 			}
 
