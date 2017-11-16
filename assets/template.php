@@ -22,5 +22,5 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Embed ) ) {
 <?php echo wp_kses( $this->content, $this->content_allowed_html ); ?>
 
 <?php if ( ! empty( $this->caption ) ) : ?>
-	<figcaption><?php echo wp_kses_post( $this->caption ); ?></figcaption>
+	<figcaption><?php echo wp_kses( $this->caption, hogan_caption_allowed_html() ); ?></figcaption>
 <?php endif; ?>
