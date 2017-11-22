@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) ) {
+if ( ! class_exists( '\\Dekode\\Hogan\\Embed' )  && class_exists( '\\Dekode\\Hogan\\Module' ) ) {
 
 	/**
 	 * Embed module class (WYSIWYG).
