@@ -3,7 +3,7 @@
  * Plugin Name: Hogan Module: Embed
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * Description: oEmbed Module for Hogan
- * Version: 1.0.0-dev
+ * Version: 1.0.0
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0
@@ -16,25 +16,26 @@
  * @author Dekode
  */
 
+namespace Dekode\Hogan\Embed;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-require_once 'class-embed.php';
-
-add_action( 'plugins_loaded', 'hogan_embed_load_textdomain' );
-add_action( 'hogan/include_modules', 'hogan_embed_register_module' );
+add_action( 'plugins_loaded', __NAMESPACE__ . '\\hogan_embed_load_textdomain' );
+add_action( 'hogan/include_modules', __NAMESPACE__ . '\\hogan_embed_register_module' );
 
 /**
  * Register module text domain
  */
 function hogan_embed_load_textdomain() {
-	load_plugin_textdomain( 'hogan-embed', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	\load_plugin_textdomain( 'hogan-embed', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
 /**
  * Register module in Hogan
  */
 function hogan_embed_register_module() {
-	hogan_register_module( new \Dekode\Hogan\Embed() );
+	require_once 'class-embed.php';
+	\hogan_register_module( new \Dekode\Hogan\Embed() );
 }
