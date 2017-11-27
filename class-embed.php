@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( '\\Dekode\\Hogan\\Embed' )  && class_exists( '\\Dekode\\Hogan\\Module' ) ) {
+if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hogan\\Module' ) ) {
 
 	/**
 	 * Embed module class (WYSIWYG).
@@ -163,7 +163,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' )  && class_exists( '\\Dekode\\Hog
 			add_filter( 'hogan/module/embed/inner_wrapper_tag', function () {
 				return 'figure';
 			} );
-
 		}
 
 		/**
