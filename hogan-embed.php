@@ -17,6 +17,7 @@
  * @author Dekode
  */
 
+declare( strict_types = 1 );
 namespace Dekode\Hogan\Embed;
 
 if ( ! defined( 'ABSPATH' ) ) {

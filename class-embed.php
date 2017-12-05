@@ -1,10 +1,11 @@
 <?php
 /**
- * Embed module class
+ * Embed module class.
  *
  * @package Hogan
  */
 
+declare( strict_types = 1 );
 namespace Dekode\Hogan;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,37 +15,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hogan\\Module' ) ) {
 
 	/**
-	 * Embed module class (WYSIWYG).
+	 * Embed module class.
 	 *
 	 * @extends Modules base class.
 	 */
 	class Embed extends Module {
 
 		/**
-		 * Embed heading
+		 * Embed heading.
 		 *
 		 * @var string $heading
 		 */
 		public $heading;
 
 		/**
-		 * Embed content
+		 * Embed HTML content.
 		 *
 		 * @var string $content
 		 */
 		public $content;
 
 		/**
-		 * Allowed HTML for embed content
+		 * Allowed HTML for embed content.
 		 *
-		 * @var string $content_allowed_html
+		 * @var array $content_allowed_html
 		 */
 		public $content_allowed_html;
 
 		/**
-		 * WYSIWYG caption
+		 * Caption HTML content.
 		 *
-		 * @var string $caption ;
+		 * @var string $caption
 		 */
 		public $caption;
 
@@ -64,8 +65,10 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 
 		/**
 		 * Field definitions for module.
+		 *
+		 * @return array $fields Fields for this module
 		 */
-		public function get_fields() {
+		public function get_fields() : array {
 
 			$fields = [];
 
@@ -101,9 +104,9 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		 * @param string $html The returned oEmbed HTML.
 		 * @param object $data A data object result from an oEmbed provider.
 		 *
-		 * @return string Video iframe code with responsive wrapper
+		 * @return string The returned oEmbed HTML with responsive wrapper
 		 */
-		public function manipulate_oembed_html( $html, $data ) {
+		public function manipulate_oembed_html( string $html, $data ) : string {
 
 			// Verify oembed data (as done in the oEmbed data2html code).
 			if ( ! is_object( $data ) || empty( $data->type ) || is_admin() ) {
@@ -167,8 +170,10 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 
 		/**
 		 * Validate module content before template is loaded.
+		 *
+		 * @return bool Whether validation of the module is successful / filled with content.
 		 */
-		public function validate_args() {
+		public function validate_args() : bool {
 			return ! empty( $this->content );
 		}
 	}
