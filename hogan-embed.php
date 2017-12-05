@@ -2,6 +2,7 @@
 /**
  * Plugin Name: Hogan Module: Embed
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
+ * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * Description: oEmbed Module for Hogan
  * Version: 1.0.2
  * Author: Dekode
