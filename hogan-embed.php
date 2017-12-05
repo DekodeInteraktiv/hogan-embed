@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * Description: oEmbed Module for Hogan
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0
