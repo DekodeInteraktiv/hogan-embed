@@ -162,10 +162,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			] );
 
 			parent::load_args_from_layout_content( $content );
-
-			add_filter( 'hogan/module/embed/inner_wrapper_tag', function () {
-				return 'figure';
-			} );
 		}
 
 		/**
