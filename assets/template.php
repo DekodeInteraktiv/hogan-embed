@@ -1,8 +1,14 @@
 <?php
 /**
- * Template for embed module
+ * Embed Module template
  *
- * $this is an instace of the Embed object. Ex. use: $this->content to output content value.
+ * $this is an instace of the Embed object.
+ *
+ * Available properties:
+ * $this->heading (string) Module heading.
+ * $this->content (string) Embed HTML code.
+ * $this->content_allowed_html (array) Allowed HTML.
+ * $this->caption (string) Caption HTML code.
  *
  * @package Hogan
  */
