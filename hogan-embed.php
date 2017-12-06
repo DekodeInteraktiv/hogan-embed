@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * Description: oEmbed Module for Hogan
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0
@@ -29,6 +29,8 @@ add_action( 'hogan/include_modules', __NAMESPACE__ . '\\hogan_embed_register_mod
 
 /**
  * Register module text domain
+ *
+ * @return void
  */
 function hogan_embed_load_textdomain() {
 	\load_plugin_textdomain( 'hogan-embed', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -36,6 +38,8 @@ function hogan_embed_load_textdomain() {
 
 /**
  * Register module in Hogan
+ *
+ * @return void
  */
 function hogan_embed_register_module() {
 	require_once 'class-embed.php';

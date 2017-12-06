@@ -22,13 +22,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 	class Embed extends Module {
 
 		/**
-		 * Embed heading.
-		 *
-		 * @var string $heading
-		 */
-		public $heading;
-
-		/**
 		 * Embed HTML content.
 		 *
 		 * @var string $content
@@ -129,15 +122,16 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		}
 
 		/**
-		 * Map fields to object variable.
+		 * Map raw fields from acf to object variable.
 		 *
-		 * @param array $content The content value.
+		 * @param array $raw_content Content values.
+		 * @param int   $counter Module location in page layout.
+		 * @return void
 		 */
-		public function load_args_from_layout_content( $content ) {
+		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 
-			$this->heading = $content['heading'] ?? null;
-			$this->content = $content['content'];
-			$this->caption = $content['caption'] ?? null;
+			$this->content = $raw_content['content'] ?? '';
+			$this->caption = $raw_content['caption'] ?? '';
 
 			$this->content_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
 				'a' => [
@@ -161,7 +155,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 				],
 			] );
 
-			parent::load_args_from_layout_content( $content );
+			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
 
 		/**
