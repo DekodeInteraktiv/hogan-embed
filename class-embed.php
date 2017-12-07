@@ -36,13 +36,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		public $content_allowed_html;
 
 		/**
-		 * Caption HTML content.
-		 *
-		 * @var string $caption
-		 */
-		public $caption;
-
-		/**
 		 * Module constructor.
 		 */
 		public function __construct() {
@@ -131,7 +124,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 
 			$this->content = $raw_content['content'] ?? '';
-			$this->caption = $raw_content['caption'] ?? '';
 
 			$this->content_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
 				'a' => [

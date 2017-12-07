@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hogan Module: Embed\n"
-"POT-Creation-Date: 2017-11-14 11:04+0100\n"
-"PO-Revision-Date: 2017-11-14 11:04+0100\n"
+"POT-Creation-Date: 2017-12-07 14:41+0100\n"
+"PO-Revision-Date: 2017-12-07 14:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: hogan-embed.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,13 +20,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: class-embed.php:56
+#: class-embed.php:43
 msgid "Embed"
 msgstr "Embed"
-
-#: class-embed.php:89
-msgid "Caption below the embedded object."
-msgstr "Bildetekst under objektet."
 
 #. Plugin Name of the plugin/theme
 msgid "Hogan Module: Embed"
@@ -47,6 +43,9 @@ msgstr "Dekode"
 #. Author URI of the plugin/theme
 msgid "https://dekode.no"
 msgstr "https://dekode.no"
+
+#~ msgid "Caption below the embedded object."
+#~ msgstr "Bildetekst under objektet."
 
 #~ msgid "Heading"
 #~ msgstr "Overskrift"
