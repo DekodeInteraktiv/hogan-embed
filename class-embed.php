@@ -132,7 +132,15 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 					'href' => true,
 					'target' => true,
 				],
-				'blockquote' => [],
+				'p' => [
+					'lang' => true,
+					'dir' => true,
+				],
+				'blockquote' => [
+					'class' => true,
+					'data-width' => true,
+					'data-dnt' => true,
+				],
 				'div' => [
 					'class' => true,
 					'style' => true,
