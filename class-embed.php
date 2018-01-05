@@ -155,6 +155,11 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 					'scrolling' => true,
 					'title' => true,
 				],
+				'script' => [
+					'src' => true,
+					'async' => true,
+					'charset' => true,
+				],
 			] );
 
 			parent::load_args_from_layout_content( $raw_content, $counter );
