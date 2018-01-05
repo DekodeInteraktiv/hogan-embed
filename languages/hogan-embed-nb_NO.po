@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hogan Module: Embed\n"
-"POT-Creation-Date: 2017-12-07 14:41+0100\n"
-"PO-Revision-Date: 2017-12-07 14:41+0100\n"
+"POT-Creation-Date: 2018-01-05 10:59+0100\n"
+"PO-Revision-Date: 2018-01-05 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nb_NO\n"
@@ -23,6 +23,11 @@ msgstr ""
 #: class-embed.php:43
 msgid "Embed"
 msgstr "Embed"
+
+#: class-embed.php:69
+#, php-format
+msgid "You can find a list of possible embeds <a href=\"%s\">here</a>."
+msgstr "Se <a href=%s>her</a> for en liste med mulige embeds."
 
 #. Plugin Name of the plugin/theme
 msgid "Hogan Module: Embed"

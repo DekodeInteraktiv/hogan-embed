@@ -65,6 +65,8 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 				'type'   => 'oembed',
 				'key'    => $this->field_key . '_content',
 				'name'   => 'content',
+				'label' => '',
+				'instructions' => sprintf( __( 'You can find a list of possible embeds <a href="%s">here</a>.', 'hogan-embed' ), 'https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F' ),
 				'width'  => 815,
 				'height' => 458,
 			];
