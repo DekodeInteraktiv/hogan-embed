@@ -20,14 +20,16 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Embed ) ) {
 	return; // Exit if accessed directly.
 }
 
-?>
+if ( ! empty( $this->heading ) ) {
+	hogan_component( 'heading', [
+		'title' => $this->heading,
+	] );
+}
 
-<?php if ( ! empty( $this->heading ) ) : ?>
-	<h2 class="heading"><?php echo esc_html( $this->heading ); ?></h2>
-<?php endif; ?>
+echo wp_kses( $this->content, $this->content_allowed_html );
 
-<?php echo wp_kses( $this->content, $this->content_allowed_html ); ?>
-
-<?php if ( ! empty( $this->caption ) ) : ?>
-	<figcaption><?php echo wp_kses( $this->caption, hogan_caption_allowed_html() ); ?></figcaption>
-<?php endif; ?>
+if ( ! empty( $this->caption ) ) {
+	printf( '<figcaption>%s</</figcaption>',
+		wp_kses( $this->caption, hogan_caption_allowed_html() )
+	);
+}
