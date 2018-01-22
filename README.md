@@ -22,5 +22,8 @@ Install the module using Composer `composer require dekodeinteraktiv/hogan-embed
 - `hogan/module/embed/caption/toolbar` for TinyMCE editor toolbar, default hogan.
 
 ## Changelog
+### master
+- Heading classname changed from `.heading` to `.hogan-heading`.
+
 ### 1.0.5
 Added instruction text to oembed field
