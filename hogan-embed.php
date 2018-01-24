@@ -10,7 +10,7 @@
  * License: GPL-3.0
  * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
  *
- * * Text Domain: hogan-embed
+ * Text Domain: hogan-embed
  * Domain Path: /languages/
  *
  * @package Hogan
