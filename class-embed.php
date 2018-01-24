@@ -62,13 +62,14 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			hogan_append_heading_field( $fields, $this );
 
 			$fields[] = [
-				'type'   => 'oembed',
-				'key'    => $this->field_key . '_content',
-				'name'   => 'content',
-				'label' => '',
+				'type'         => 'oembed',
+				'key'          => $this->field_key . '_content',
+				'name'         => 'content',
+				'label'        => '',
+				// Translators: %s: url to codex.
 				'instructions' => sprintf( __( 'You can find a list of possible embeds <a href="%s">here</a>.', 'hogan-embed' ), 'https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F' ),
-				'width'  => 815,
-				'height' => 458,
+				'width'        => 815,
+				'height'       => 458,
 			];
 
 			hogan_append_caption_field( $fields, $this );
@@ -128,36 +129,36 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			$this->content = $raw_content['content'] ?? '';
 
 			$this->content_allowed_html = apply_filters( 'hogan/module/embed/content/allowed_html', [
-				'a' => [
-					'href' => true,
+				'a'          => [
+					'href'   => true,
 					'target' => true,
 				],
-				'p' => [
+				'p'          => [
 					'lang' => true,
-					'dir' => true,
+					'dir'  => true,
 				],
 				'blockquote' => [
-					'class' => true,
+					'class'      => true,
 					'data-width' => true,
-					'data-dnt' => true,
+					'data-dnt'   => true,
 				],
-				'div' => [
+				'div'        => [
 					'class' => true,
 					'style' => true,
 				],
-				'iframe' => [
-					'src' => true,
-					'width' => true,
-					'height' => true,
-					'frameborder' => true,
-					'marginwidth' => true,
+				'iframe'     => [
+					'src'          => true,
+					'width'        => true,
+					'height'       => true,
+					'frameborder'  => true,
+					'marginwidth'  => true,
 					'marginheight' => true,
-					'scrolling' => true,
-					'title' => true,
+					'scrolling'    => true,
+					'title'        => true,
 				],
-				'script' => [
-					'src' => true,
-					'async' => true,
+				'script'     => [
+					'src'     => true,
+					'async'   => true,
 					'charset' => true,
 				],
 			] );
