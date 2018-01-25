@@ -45,6 +45,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 			add_filter( 'oembed_dataparse', [ $this, 'manipulate_oembed_html' ], 99, 2 );
+			add_filter( 'pre_kses', [ $this, 'allow_facebook_url_in_kses' ], 10, 1 );
 
 			parent::__construct();
 		}
@@ -115,6 +116,25 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 
 			// Return code.
 			return '<div class="embed-responsive" style="padding-bottom: ' . $ar . '%;">' . $html . '</div>';
+		}
+
+		/**
+		 * Override pre_kses to allow Facebook to async load the Connect API.
+		 *
+		 * @param string $string Content to run through kses.
+		 * @return string Content to run through kses.
+		 */
+		public function allow_facebook_url_in_kses( string $string ) : string {
+
+			/**
+			 * The wp_kses_normalize_entities() function used by wp_kses() will replace & with &amp; - this will result in Facebook embeds failing to load.
+			 * This ugly hack will reinsert the original &.
+			 */
+			if ( false !== strpos( $string, 'sdk.js#xfbml=1&amp;version=' ) ) {
+				$string = str_replace( 'sdk.js#xfbml=1&amp;version=', 'sdk.js#xfbml=1&version=', $string );
+			}
+
+			return $string;
 		}
 
 		/**
