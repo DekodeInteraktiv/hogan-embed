@@ -132,19 +132,35 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 				'a'          => [
 					'href'   => true,
 					'target' => true,
+					'style'  => true,
 				],
 				'p'          => [
-					'lang' => true,
-					'dir'  => true,
+					'lang'   => true,
+					'dir'    => true,
+					'style'  => true,
+				],
+				'time' => [
+					'style'    => true,
+					'datetime' => true,
 				],
 				'blockquote' => [
-					'class'      => true,
-					'data-width' => true,
-					'data-dnt'   => true,
+					'class'                  => true,
+					'style'                  => true,
+					'data-width'             => true,
+					'data-dnt'               => true,
+					'data-instgrm-captioned' => true,
+					'data-instgrm-permalink' => true,
+					'data-instgrm-version'   => true,
+					'cite'                   => true,
 				],
 				'div'        => [
-					'class' => true,
-					'style' => true,
+					'class'      => true,
+					'style'      => true,
+					'width'      => true,
+					'id'         => true,
+					'data-href'  => true,
+					'data-width' => true,
+					'data-url'   => true,
 				],
 				'iframe'     => [
 					'src'          => true,
@@ -155,13 +171,28 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 					'marginheight' => true,
 					'scrolling'    => true,
 					'title'        => true,
+					'class'        => true,
+					'id'           => true,
+					'style'        => true,
+					'allowtransparency' => true,
+					'data-instgrm-payload-id' => true,
 				],
 				'script'     => [
 					'src'     => true,
 					'async'   => true,
 					'charset' => true,
+					'defer'   => true,
+				],
+				'img'        => [
+					'src' => true,
+					'alt' => true,
 				],
 			] );
+
+			// Remove unwanted Instagram inline CSS. (safecss_filter_attr will disard any inline css containing \ ( & } = or comments).
+			$this->content = str_replace( [ 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.15)' ], 'transparent', $this->content );
+			$this->content = str_replace( 'width:-webkit-calc(100% - 2px);', '', $this->content );
+			$this->content = str_replace( 'calc(100% - 2px);', '100%', $this->content );
 
 			parent::load_args_from_layout_content( $raw_content, $counter );
 		}
