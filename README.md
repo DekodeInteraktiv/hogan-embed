@@ -1,4 +1,4 @@
-# oEmbed Module for [Hogan](https://github.com/dekodeinteraktiv/hogan-core)
+# oEmbed Module for [Hogan](https://github.com/dekodeinteraktiv/hogan-core) [![Build Status](https://travis-ci.org/DekodeInteraktiv/hogan-embed.svg?branch=master)](https://travis-ci.org/DekodeInteraktiv/hogan-embed)
 
 ## Installation
 Install the module using Composer `composer require dekodeinteraktiv/hogan-embed` or simply by downloading this repository and placing it in `wp-content/plugins`
