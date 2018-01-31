@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * GitHub Plugin URI: https://github.com/dekodeinteraktiv/hogan-embed
  * Description: oEmbed Module for Hogan
- * Version: 1.0.12
+ * Version: 1.0.13
  * Author: Dekode
  * Author URI: https://dekode.no
  * License: GPL-3.0-or-later
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'HOGAN_EMBED_VERSION', '1.0.12' );
+define( 'HOGAN_EMBED_VERSION', '1.0.13' );
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\\hogan_embed_load_textdomain' );
 add_action( 'hogan/include_modules', __NAMESPACE__ . '\\hogan_embed_register_module' );
