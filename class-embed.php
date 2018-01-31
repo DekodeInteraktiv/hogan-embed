@@ -43,7 +43,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			$this->label    = __( 'Embed', 'hogan-embed' );
 			$this->template = __DIR__ . '/assets/template.php';
 
-			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 			add_filter( 'oembed_dataparse', [ $this, 'manipulate_oembed_html' ], 99, 2 );
 			add_filter( 'pre_kses', [ $this, 'allow_facebook_url_in_kses' ], 10, 1 );
 
