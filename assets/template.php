@@ -29,7 +29,7 @@ if ( ! empty( $this->heading ) ) {
 echo wp_kses( $this->content, $this->content_allowed_html );
 
 if ( ! empty( $this->caption ) ) {
-	printf( '<figcaption>%s</</figcaption>',
-		wp_kses( $this->caption, hogan_caption_allowed_html() )
-	);
+	hogan_component( 'caption', [
+		'content' => $this->caption,
+	] );
 }
