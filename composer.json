@@ -13,10 +13,14 @@
     "exclude": [
       ".editorconfig",
       ".gitignore",
+      ".stylelint.rc",
+      ".travis.yml",
       "composer.json",
       "composer.lock",
       "LICENSE",
-      "phpcs.xml"
+      "package.json",
+      "phpcs.xml",
+      "yarn.lock"
     ]
   }
 }

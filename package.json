@@ -1,0 +1,17 @@
+{
+  "name": "hogan-embed",
+  "version": "1.0.0",
+  "private": true,
+  "hogan": {
+    "name": "hogan-embed",
+    "css": "./src/style.css"
+  },
+  "scripts": {
+    "build": "hogan-scripts build",
+    "lint": "hogan-scripts lint"
+  },
+  "devDependencies": {
+    "hogan-scripts": "0.0.6"
+  },
+  "dependencies": {}
+}

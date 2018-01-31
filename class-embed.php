@@ -84,7 +84,7 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 
 			$_version = defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ? time() : HOGAN_EMBED_VERSION;
 
-			wp_enqueue_style( 'hogan-embed', plugins_url( '/assets/styles.css', __FILE__ ), [], $_version );
+			wp_enqueue_style( 'hogan-embed', plugins_url( '/assets/hogan-embed.css', __FILE__ ), [], $_version );
 		}
 
 		/**
