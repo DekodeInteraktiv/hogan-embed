@@ -56,20 +56,17 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		 */
 		public function get_fields() : array {
 
-			$fields = [];
-
-			// Heading field can be disabled using filter hogan/module/embed/heading/enabled (true/false).
-			hogan_append_heading_field( $fields, $this );
-
-			$fields[] = [
-				'type'         => 'oembed',
-				'key'          => $this->field_key . '_content',
-				'name'         => 'content',
-				'label'        => '',
-				// Translators: %s: url to codex.
-				'instructions' => sprintf( __( 'You can find a list of possible embeds <a href="%s">here</a>.', 'hogan-embed' ), 'https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F' ),
-				'width'        => 815,
-				'height'       => 458,
+			$fields = [
+				[
+					'type'         => 'oembed',
+					'key'          => $this->field_key . '_content',
+					'name'         => 'content',
+					'label'        => '',
+					// Translators: %s: url to codex.
+					'instructions' => sprintf( __( 'You can find a list of possible embeds <a href="%s">here</a>.', 'hogan-embed' ), 'https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F' ),
+					'width'        => 815,
+					'height'       => 458,
+				]
 			];
 
 			hogan_append_caption_field( $fields, $this );
