@@ -29,13 +29,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		public $content;
 
 		/**
-		 * Allowed HTML for embed content.
-		 *
-		 * @var array $content_allowed_html
-		 */
-		public $content_allowed_html;
-
-		/**
 		 * Module constructor.
 		 */
 		public function __construct() {
@@ -143,69 +136,6 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 		public function load_args_from_layout_content( array $raw_content, int $counter = 0 ) {
 
 			$this->content = $raw_content['content'] ?? '';
-
-			$this->content_allowed_html = apply_filters(
-				'hogan/module/embed/content/allowed_html', [
-					'a'          => [
-						'href'   => true,
-						'target' => true,
-						'style'  => true,
-					],
-					'p'          => [
-						'lang'  => true,
-						'dir'   => true,
-						'style' => true,
-					],
-					'time'       => [
-						'style'    => true,
-						'datetime' => true,
-					],
-					'blockquote' => [
-						'class'                  => true,
-						'style'                  => true,
-						'data-width'             => true,
-						'data-dnt'               => true,
-						'data-instgrm-captioned' => true,
-						'data-instgrm-permalink' => true,
-						'data-instgrm-version'   => true,
-						'cite'                   => true,
-					],
-					'div'        => [
-						'class'      => true,
-						'style'      => true,
-						'width'      => true,
-						'id'         => true,
-						'data-href'  => true,
-						'data-width' => true,
-						'data-url'   => true,
-					],
-					'iframe'     => [
-						'src'                     => true,
-						'width'                   => true,
-						'height'                  => true,
-						'frameborder'             => true,
-						'marginwidth'             => true,
-						'marginheight'            => true,
-						'scrolling'               => true,
-						'title'                   => true,
-						'class'                   => true,
-						'id'                      => true,
-						'style'                   => true,
-						'allowtransparency'       => true,
-						'data-instgrm-payload-id' => true,
-					],
-					'script'     => [
-						'src'     => true,
-						'async'   => true,
-						'charset' => true,
-						'defer'   => true,
-					],
-					'img'        => [
-						'src' => true,
-						'alt' => true,
-					],
-				]
-			);
 
 			// Remove unwanted Instagram inline CSS. (safecss_filter_attr will disard any inline css containing \ ( & } = or comments).
 			$this->content = str_replace( [ 'rgba(0,0,0,0.5)', 'rgba(0,0,0,0.15)' ], 'transparent', $this->content );
