@@ -6,7 +6,6 @@
  *
  * Available properties:
  * $this->content (string) Embed HTML code.
- * $this->content_allowed_html (array) Allowed HTML.
  * $this->caption (string) Caption HTML code.
  *
  * @package Hogan
@@ -19,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) || ! ( $this instanceof Embed ) ) {
 	return; // Exit if accessed directly.
 }
 
-echo wp_kses( $this->content, $this->content_allowed_html );
+echo $this->content; // WPCS: XSS OK.
 
 if ( ! empty( $this->caption ) ) {
 	hogan_component( 'caption', [
