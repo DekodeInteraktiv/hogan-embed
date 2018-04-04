@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.2
+- Output content without `wp_kses()`
+
 ## 1.1.1
 - Update module to new registration method introduced in [Hogan Core 1.1.7](https://github.com/DekodeInteraktiv/hogan-core/releases/tag/1.1.7)
 - Set hogan-core dependency `"dekodeinteraktiv/hogan-core": ">=1.1.7"`
