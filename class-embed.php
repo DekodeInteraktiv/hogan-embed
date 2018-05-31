@@ -92,6 +92,11 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 				return $html;
 			}
 
+			// Don't manipulate the embed if fetched from the rest api.
+			if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+				return $html;
+			}
+
 			// Verify that it is a video.
 			if ( 'video' !== $data->type ) {
 				return $html;
