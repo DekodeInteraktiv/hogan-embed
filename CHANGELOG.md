@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.0
+- Don't manipulate the embed if fetched from the rest api. Fixes layout in Gutenberg [#6](https://github.com/DekodeInteraktiv/hogan-embed/pull/6)
+
 ## 1.1.2
 - Output content without `wp_kses()`
 
