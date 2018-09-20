@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.1
+- Applied filter to the html output. [#9](https://github.com/DekodeInteraktiv/hogan-embed/pull/9)
+
 ## 1.2.0
 - Don't manipulate the embed if fetched from the rest api. Fixes layout in Gutenberg [#6](https://github.com/DekodeInteraktiv/hogan-embed/pull/6)
 
