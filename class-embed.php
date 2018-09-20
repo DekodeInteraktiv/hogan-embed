@@ -112,7 +112,8 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			return apply_filters(
 				'hogan/module/embed/manipulate_oembed_html',
 				'<div class="embed-responsive" style="padding-bottom: ' . $ar . '%;">' . $html . '</div>',
-				$html
+				$html,
+				$data
 			);
 		}
 
