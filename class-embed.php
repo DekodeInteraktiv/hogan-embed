@@ -109,7 +109,11 @@ if ( ! class_exists( '\\Dekode\\Hogan\\Embed' ) && class_exists( '\\Dekode\\Hoga
 			$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
 
 			// Return code.
-			return '<div class="embed-responsive" style="padding-bottom: ' . $ar . '%;">' . $html . '</div>';
+			return apply_filters(
+				'hogan/module/embed/manipulate_oembed_html',
+				'<div class="embed-responsive" style="padding-bottom: ' . $ar . '%;">' . $html . '</div>',
+				$html
+			);
 		}
 
 		/**
